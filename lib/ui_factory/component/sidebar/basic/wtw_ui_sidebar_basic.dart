@@ -74,9 +74,6 @@ class WTWUISidebarBasic extends WTWUISidebar {
 
   @override
   Widget? build() {
-    print('--------------------------------------------');
-    print('WTSidebarBasic(width: $width, height: $height)');
-    print('--------------------------------------------');
     setSizes();
 
     return Drawer(

@@ -574,10 +574,6 @@ class _HeaderState extends State<HeaderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('--------------------------------------------');
-    print('WTHeaderImpl(width: $width, height: $height)');
-    print('--------------------------------------------');
-
     return AppBar(
       key: widget.key,
       elevation: shadow! ? 2.0 : 0.0,
