@@ -166,11 +166,7 @@ class _FieldState extends State<FieldWidget> {
 
   bool hidden = true;
   void showField() {
-    print('-------------------------------');
-    print('showField_1: $hidden');
     setState(() { hidden = hidden == true ? false : true; });
-    print('showField_2: $hidden');
-    print('-------------------------------');
   }
 
   Widget? createLabelWidget() {
