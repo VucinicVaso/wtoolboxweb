@@ -1,4 +1,7 @@
-import 'package:wtoolboxweb/dependency_container/wtw_dependency_container.dart';
-import 'package:wtoolboxweb/dependency_container/impl/wtw_dependency_container_impl.dart';
+abstract class WToolboxWeb {
 
-WTWDependencyContainer? dependecyContainer = WTWDependencyContainerImpl();
+  Future<void> open({ String? envFile });
+
+  Future<void> close();
+
+}

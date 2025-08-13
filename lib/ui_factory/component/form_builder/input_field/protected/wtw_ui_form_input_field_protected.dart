@@ -3,7 +3,7 @@ import '../../../../../external/lib_material_symbols.dart';
 import '../wtw_ui_form_input_filed.dart';
 import '../wtw_ui_form_input_filed_helper.dart';
 
-class WTWUIFormInputFieldText extends WTWUIFormInputField {
+class WTWUIFormInputFieldProtected extends WTWUIFormInputField {
 
   @override
   Widget? build() {
@@ -19,7 +19,6 @@ class WTWUIFormInputFieldText extends WTWUIFormInputField {
       secondaryFocusNode: secondaryFocusNode,
       validator: validator,
       controller: controller,
-      enabled: enabled,
       isRequired: isRequired,
       isRequiredColor: isRequiredColor,
       prefix: prefix,
@@ -71,7 +70,6 @@ class FieldWidget extends StatefulWidget {
     this.secondaryFocusNode,
     this.validator,
     this.controller,
-    this.enabled,
     this.isRequired,
     this.isRequiredColor,
     this.prefix,
@@ -111,7 +109,7 @@ class FieldWidget extends StatefulWidget {
     inputBorderColor, inputFocusBorderColor, inputErrorBorderColor;
   double? width, height, prefixSize, suffixSize, 
     inputTextSize, labelSize, hintLabelSize, errorTextSize, inputBorderWidth, inputFocusBorderWidth, inputErrorBorderWidth;
-  bool? enabled, isRequired;
+  bool? isRequired;
   IconData? prefix, suffix;
   String? inputText, label, hintLabel;
   TextAlign? textAlign;
@@ -137,7 +135,6 @@ class _FieldState extends State<FieldWidget> {
 
   @override
   void dispose() {
-    // if(widget.focusNode != null) { widget.focusNode!.dispose(); }
     super.dispose();
   }
 
@@ -165,6 +162,15 @@ class _FieldState extends State<FieldWidget> {
       widget.prefixSize    = prefixSize;
       widget.suffixSize    = suffixSize;
     });
+  }
+
+  bool hidden = true;
+  void showField() {
+    print('-------------------------------');
+    print('showField_1: $hidden');
+    setState(() { hidden = hidden == true ? false : true; });
+    print('showField_2: $hidden');
+    print('-------------------------------');
   }
 
   Widget? createLabelWidget() {
@@ -256,8 +262,6 @@ class _FieldState extends State<FieldWidget> {
   }
 
   Widget? createSuffixWidget() {
-    if(widget.suffix == null) { return SizedBox.shrink(); }
-
     return Container(
       width: widget.suffixSize,
       height: widget.suffixSize,
@@ -265,14 +269,14 @@ class _FieldState extends State<FieldWidget> {
       margin: const EdgeInsets.fromLTRB(7.5, 0.0, 0.0, 0.0),
       alignment: Alignment.center,
       child: GestureDetector(
-        onTap: widget.suffixAction != null ? widget.suffixAction!() : () {},
+        onTap: () { showField(); },
         child: Icon(
-          widget.suffix,
+          hidden ? Symbols.visibility : Symbols.visibility_off,
           color: widget.suffixColor,
           size: widget.suffixSize,
         ),
       )
-    );
+    ); 
   }
 
   @override
@@ -306,9 +310,9 @@ class _FieldState extends State<FieldWidget> {
                   FocusScope.of(context).requestFocus(widget.secondaryFocusNode);
                 }
               },
-              enabled: widget.enabled,
+              enabled: true,
               controller: widget.controller,
-              obscureText: false,
+              obscureText: hidden,
               textAlign: widget.textAlign!,
               autovalidateMode: widget.validationMode,
               style: TextStyle(
@@ -329,7 +333,7 @@ class _FieldState extends State<FieldWidget> {
                   color: widget.errorTextColor,
                 ),
                 prefix: createPrefixWidget()!,
-                suffix: createSuffixWidget()!,
+                suffix: createSuffixWidget(),
               ),
               textCapitalization: widget.textCapitalization!,
               keyboardType: widget.textInputType,

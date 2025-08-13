@@ -29,6 +29,7 @@ import '../../component/form_builder/form/wtw_ui_form.dart';
 import '../../component/form_builder/form/impl/wtw_ui_form_impl.dart';
 import '../../component/form_builder/input_field/wtw_ui_form_input_filed.dart';
 import '../../component/form_builder/input_field/text/wtw_ui_form_input_field_text.dart';
+import '../../component/form_builder/input_field/protected/wtw_ui_form_input_field_protected.dart';
 import '../../component/button/wtw_ui_button.dart';
 import '../../component/button/text/wtw_ui_button_text.dart';
 import '../../component/button/underline_text/wtw_ui_button_underline_text.dart';
@@ -360,7 +361,27 @@ class WTWUIFactoryImpl extends WTWUIFactory {
           ..setInputErrorFocusBorder(theme!.error1, 1)
           ..setTextInputType(TextInputType.text)
           ..setTextAlign(TextAlign.left)
-          ..setAsterixColor(theme!.error1)
+          ..setRequiredColor(theme!.error1)
+          ..setInputTextColor(theme!.text1)
+          ..setErrorTextColor(theme!.error1)
+          ..setPrefixColor(theme!.primary1)
+          ..setLabelColor(theme!.text3)
+          ..setSuffixColor(theme!.text1)
+          ..setInputBoder(theme!.text1, 1.0)
+          ..setInputFocusBorder(theme!.primary1, 1.0)
+          ..setInputErrorFocusBorder(theme!.error1, 1.0);
+        return component;
+      case WTWUIFormInputFieldType.protected:
+        var component = WTWUIFormInputFieldProtected()
+          ..setFocusNode()
+          ..setMargin(left: 20.0, top: 0.0, right: 20.0, bottom: 20.0)
+          ..setBackgroundColor(theme!.background1)
+          ..setInputBoder(theme!.background2, 1)
+          ..setInputFocusBorder(theme!.primary1, 1)
+          ..setInputErrorFocusBorder(theme!.error1, 1)
+          ..setTextInputType(TextInputType.text)
+          ..setTextAlign(TextAlign.left)
+          ..setRequiredColor(theme!.error1)
           ..setInputTextColor(theme!.text1)
           ..setErrorTextColor(theme!.error1)
           ..setPrefixColor(theme!.primary1)

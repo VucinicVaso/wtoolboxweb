@@ -14,13 +14,12 @@ abstract class WTWUIFormInputField extends WTWUIComponent {
   void setController(TextEditingController? v) { controller = v; }
 
   bool? enabled = true;
-  void enable() { enabled = true; }
   void disable() { enabled = false; }
 
-  bool? asterixRequired = false;
-  Color? asterixColor;
-  void requireAsterix() { asterixRequired = true; }
-  void setAsterixColor(Color? v) { asterixColor = v; }
+  bool? isRequired = false;
+  Color? isRequiredColor;
+  void required() { isRequired = true; }
+  void setRequiredColor(Color? v) { isRequiredColor = v; }
 
   IconData? prefix;
   double? prefixSize;

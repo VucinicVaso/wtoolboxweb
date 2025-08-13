@@ -61,7 +61,8 @@ enum WTWUIFormType {
 }
 
 enum WTWUIFormInputFieldType {
-  text
+  text,
+  protected
 }
 
 enum WTWUIButtonType {
