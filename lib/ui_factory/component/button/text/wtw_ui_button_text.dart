@@ -63,13 +63,13 @@ class _ButtonState extends State<ButtonWidget> {
   void setButtonState() {
     double? size = 0.0;
     if(widget.width! > 1000) { size = 22; }
-    if(widget.width! < 1000) { size = 18; }
-    if(widget.width! < 6000) { size = 16; }
+    if(widget.width! <= 1000) { size = 18; }
+    if(widget.width! <= 600) { size = 16; }
     setState(() { widget.labelSize = size; });
   }
 
   Widget? textWidget() {
-    if(widget.label == null) { return SizedBox.shrink(); }
+    if(widget.label == null) { return const SizedBox.shrink(); }
 
     return Text(
       widget.label!,
