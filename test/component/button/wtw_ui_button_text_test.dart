@@ -36,7 +36,7 @@ void main() {
         ),
       );
     
-      //Assert - rendered Container has correct padding, margin, backgroundColor, borderColor
+      // Container has correct padding, margin, backgroundColor, borderColor
       final containerWidget = tester.widget<Container>(find.byType(Container));
       expect(containerWidget.margin, EdgeInsets.fromLTRB(paddingAll, paddingAll, paddingAll, paddingAll));
       expect(containerWidget.padding, EdgeInsets.fromLTRB(marginAll, marginAll, marginAll, marginAll));
@@ -44,13 +44,13 @@ void main() {
       expect(containerWidgetBoxDecoration.color, backgroundColor);
       expect(containerWidgetBoxDecoration.border?.top.color, borderColor);
 
-      //Assert - rendered Text has correct color and size
+      // Text has correct color and size
       final textWidget = tester.widget<Text>(find.byType(Text)); 
       expect(textWidget.data, label);
       expect(textWidget.style?.color, labelColor);
       expect(textWidget.style?.fontSize, labelSize);
 
-      //Tap button and allow delay to complete
+      // Tap button and allow delay to complete
       await tester.tap(find.byType(GestureDetector));
       await tester.pump(const Duration(milliseconds: 250));
       expect(actionTriggered, true);

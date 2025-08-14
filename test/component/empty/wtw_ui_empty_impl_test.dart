@@ -21,9 +21,11 @@ void main() {
         ),
       );
 
+      // SizedBox exists
       final componentFinder = find.byType(SizedBox);
       expect(componentFinder, findsOneWidget);
 
+      // SizedBox has width and height
       final componentWidget = tester.renderObject<RenderBox>(componentFinder);
       expect(componentWidget.size.width, width);
       expect(componentWidget.size.height, height);

@@ -40,24 +40,24 @@ void main() {
       final componentFinder = find.byType(FloatingActionButton);
       expect(componentFinder, findsOneWidget);
 
-      //Assert - rendered FloatingActionButton has padding, backgroundColor
+      // FloatingActionButton has padding, backgroundColor
       final floatingActionButtonWidget = tester.widget<FloatingActionButton>(componentFinder); 
       expect(floatingActionButtonWidget.backgroundColor, backgroundColor);
       expect(floatingActionButtonWidget.extendedPadding, EdgeInsets.fromLTRB(paddingAll, paddingAll, paddingAll, paddingAll));
 
-      //Assert - rendered Icon has correct iconData, color and size
+      // Icon has correct iconData, color and size
       final iconWidget = tester.widget<Icon>(find.byType(Icon)); 
       expect(iconWidget.icon, icon);
       expect(iconWidget.color, iconColor);
       expect(iconWidget.size, iconSize);
 
-      //Assert - rendered Text has correct label, color and size
+      // Text has correct label, color and size
       final textWidget = tester.widget<Text>(find.byType(Text)); 
       expect(textWidget.data, label);
       expect(textWidget.style?.color, labelColor);
       expect(textWidget.style?.fontSize, labelSize);
 
-      //Tap button and allow delay to complete
+      // Tap button and allow delay to complete
       await tester.tap(find.byType(FloatingActionButton));
       await tester.pump(const Duration(milliseconds: 250));
       expect(actionTriggered, true);
