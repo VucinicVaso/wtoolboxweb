@@ -16,8 +16,6 @@ import '../../theme/wtw_theme_service.dart';
 import '../../theme/impl/wtw_theme_service_impl.dart';
 import '../../ui_factory/factory/wtw_ui_factory.dart';
 import '../../ui_factory/factory/impl/wtw_ui_factory_impl.dart';
-import '../../file_manager/file/wtw_file.dart';
-import '../../file_manager/file/impl/wtw_file_impl.dart';
 import '../wtw_dependency_container.dart';
 
 class WTWDependencyContainerImpl extends WTWDependencyContainer {
@@ -33,7 +31,6 @@ class WTWDependencyContainerImpl extends WTWDependencyContainer {
     Get.put<WTWMessageBrokerService>(WTWMessageBrokerServiceImpl());
     Get.put<WTWEncryption>(WTWEncryptionImpl(key: dotenv.get('ENCRYPTION_KEY')));
     Get.put<WTWHttpAdapter>(WTWHttpAdapterImpl());
-    Get.put<WTWFile>(WTWFileImpl());
 
     WTWUIFactory? uiFactory = WTWUIFactoryImpl()
       ..setTheme(Get.find<WTWThemeService>().themeExtension!);
@@ -50,7 +47,6 @@ class WTWDependencyContainerImpl extends WTWDependencyContainer {
     await Get.delete<WTWApplicationStarterService>(force: true);
     await Get.delete<WTWUIFactory>(force: true);
     await Get.delete<WTWHttpAdapter>(force: true);
-    await Get.delete<WTWFile>(force: true);  
     dotenv.clean();
   }
 
