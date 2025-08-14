@@ -433,7 +433,7 @@ class WTWUIFactoryImpl extends WTWUIFactory {
           ..setIconColor(theme!.primary5);
         return component;
       case WTWUIFloatingMenuType.extended1:
-        var component = WTWUIFloatingMenuExdended()
+        var component = WTWUIFloatingMenuExtended()
           ..setBackgroundColor(theme!.primary5)
           ..setIconColor(theme!.primary1)
           ..setLabelColor(theme!.primary1);

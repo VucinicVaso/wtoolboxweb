@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import '../wtw_ui_floating_menu.dart';
 
-class WTWUIFloatingMenuExdended extends WTWUIFloatingMenu {
+class WTWUIFloatingMenuExtended extends WTWUIFloatingMenu {
 
   void setSizes() {
-    iconSize  = width! > 1000 ? 27 : 25; 
-    labelSize = width! > 1000 ? 20 : 18;
+    if(width! > 1000) {
+      iconSize  = 27;
+      labelSize = 20;
+    }
+    if(width! <= 1000) {
+      iconSize  = 25;
+      labelSize = 18;
+    }
   }
   
   Widget? createIconWidget() {
@@ -20,8 +26,6 @@ class WTWUIFloatingMenuExdended extends WTWUIFloatingMenu {
 
   Widget? createTextWidget() {
     if(label == null) { return SizedBox.shrink(); }
-
-    label = label!.length > 10 ? '${label!.substring(0, 10)}...' : label!;
 
     return Text(
       label!,

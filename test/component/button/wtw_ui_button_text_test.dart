@@ -9,13 +9,14 @@ void main() {
     'WTWUIButtonText component test', 
     (tester) async {
       double width          = 1000;
+      Color backgroundColor = Colors.blue;
+      Color borderColor     = Colors.blue;
+      bool? actionTriggered = false;
       String label          = 'Press Me';
       double paddingAll     = 10.0;
       double marginAll      = 10.0;
       Color labelColor      = Colors.white;
-      Color backgroundColor = Colors.blue;
-      Color borderColor     = Colors.blue;
-      bool? actionTriggered = false;
+      double labelSize      = 18.0;
 
       WTWUIButton component = WTWUIButtonText()
         ..setWidth(width)
@@ -44,10 +45,10 @@ void main() {
       expect(containerWidgetBoxDecoration.border?.top.color, borderColor);
 
       //Assert - rendered Text has correct color and size
-      final textWidget = tester.widget<Text>(find.text(label)); 
+      final textWidget = tester.widget<Text>(find.byType(Text)); 
       expect(textWidget.data, label);
       expect(textWidget.style?.color, labelColor);
-      expect(textWidget.style?.fontSize, 18);
+      expect(textWidget.style?.fontSize, labelSize);
 
       //Tap button and allow delay to complete
       await tester.tap(find.byType(GestureDetector));

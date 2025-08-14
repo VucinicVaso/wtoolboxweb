@@ -44,7 +44,7 @@ void main() {
       expect(containerWidgetBoxDecoration.border?.bottom.color, borderColor);
 
       //Assert - rendered Text has correct color and size
-      final textWidget = tester.widget<Text>(find.text(label)); 
+      final textWidget = tester.widget<Text>(find.byType(Text)); 
       expect(textWidget.data, label);
       expect(textWidget.style?.color, labelColor);
       expect(textWidget.style?.fontSize, 18);
