@@ -4,9 +4,16 @@ import '../wtw_ui_sidebar.dart';
 class WTWUISidebarBasic extends WTWUISidebar {
 
   void setSizes() {
-    width     = width! * 0.3;
-    iconSize  = width! > 1000 ? 27 : 25;
-    labelSize = width! > 1000 ? 20 : 18;    
+    width = width! * 0.3;
+
+    if(width! > 1000) {
+      iconSize  = 27;
+      labelSize = 18;        
+    }
+    if(width! <= 1000) {
+      iconSize  = 25;
+      labelSize = 18; 
+    }   
   }
 
   Widget? actionsList() {
@@ -43,13 +50,13 @@ class WTWUISidebarBasic extends WTWUISidebar {
               a['label'] == null
                 ? emptyWidget
                 : Text(
-                  a['label'],
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: labelColor,
-                    fontSize: labelSize,
+                    a['label'],
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: labelColor,
+                      fontSize: labelSize,
+                    ),
                   ),
-                ),
             ],
           ),
         ),

@@ -34,7 +34,7 @@ void main() {
           ),
         ),
       );
-    
+
       // Container has correct padding, margin, backgroundColor, borderColor
       final containerWidget = tester.widget<Container>(find.byType(Container));
       expect(containerWidget.margin, EdgeInsets.fromLTRB(paddingAll, paddingAll, paddingAll, paddingAll));
