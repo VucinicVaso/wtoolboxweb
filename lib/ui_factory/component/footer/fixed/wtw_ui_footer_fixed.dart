@@ -4,10 +4,17 @@ import '../wtw_ui_footer.dart';
 class WTWUIFooterFixed extends WTWUIFooter {
 
   void setSizes() {
-    itemPadding   = itemPadding ?? const EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 6.0);
-    itemMargin    = itemMargin ?? const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0);
-    itemIconSize  = width! > 1000 ? 27 : 25;
-    itemLabelSize = width! > 1000 ? 25 : 18;
+    itemPadding = itemPadding ?? const EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 6.0);
+    itemMargin  = itemMargin ?? const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0);
+
+    if(width! > 1000) {
+      itemIconSize  = 27;
+      itemLabelSize = 25;
+    }
+    if(width! <= 1000) {
+      itemIconSize  = 25;
+      itemLabelSize = 18;      
+    }
   }
 
   BottomNavigationBarItem? createBarItem(Map<dynamic, dynamic>? e) {

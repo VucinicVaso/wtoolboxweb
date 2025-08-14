@@ -81,7 +81,7 @@ class WTWMeMneTranslations extends WTWTranslations {
       "invalidValidator": "''@value'' nije validan.",
       "negativeValidator": "''@value'' ne smije biti negativna.",
       "minLengthValidator": "''@key'' mora imati najmanje ''@value'' karaktera.",
-      "missingValidator": "''@key'' nedostaje ''@value''",
+      "missingValidator": "''@key'' nedostaje ''@value''.",
     },
   };
 

@@ -6,6 +6,7 @@ import 'component/button/wtw_ui_button_text_test.dart' as component_button_text_
 import 'component/button/wtw_ui_button_underline_text_test.dart' as component_button_underline_text_test;
 import 'component/floating_menu/wtw_ui_floating_menu_basic_test.dart' as component_floating_menu_basic_test;
 import 'component/floating_menu/wtw_ui_floating_menu_extended_test.dart' as component_floating_menu_extended_test;
+import 'service/encryption/wtw_encryption_test.dart' as service_encryption_test;
 
 void main() {
   
@@ -14,6 +15,7 @@ void main() {
   //   () {}
   // );
 
+  // components tests
   component_empty_impl_test.main();
   component_space_basic_test.main();
   component_divider_horizontal_test.main();
@@ -21,5 +23,8 @@ void main() {
   component_button_underline_text_test.main();
   component_floating_menu_basic_test.main();
   component_floating_menu_extended_test.main();
+
+  // services tests
+  service_encryption_test.main();
 
 }

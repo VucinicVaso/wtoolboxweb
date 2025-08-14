@@ -80,7 +80,7 @@ class WTWEnUsTranslations extends WTWTranslations {
       "invalidValidator": "''@value'' is invalid.",
       "negativeValidator": "''@value'' must not be negative.",
       "minLengthValidator": "''@key'' must be minimum ''@value'' characters long.",
-      "missingValidator": "''@key'' is missing ''@value''",
+      "missingValidator": "''@key'' is missing ''@value''.",
     },
   };
 
