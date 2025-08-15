@@ -15,16 +15,16 @@ void main() {
   // test('WTOOLBOXWEB main test', () {});
 
   // components tests
-  // component_empty_impl_test.main();
-  // component_space_basic_test.main();
-  // component_divider_horizontal_test.main();
-  // component_button_text_test.main();
-  // component_button_underline_text_test.main();
-  // component_floating_menu_basic_test.main();
-  // component_floating_menu_extended_test.main();
+  component_empty_impl_test.main();
+  component_space_basic_test.main();
+  component_divider_horizontal_test.main();
+  component_button_text_test.main();
+  component_button_underline_text_test.main();
+  component_floating_menu_basic_test.main();
+  component_floating_menu_extended_test.main();
 
   // services tests
-  //service_encryption_test.main();
+  service_encryption_test.main();
   http_adapter_test.main();
 
 }
