@@ -18,8 +18,7 @@ class WTWHttpAdapterImpl extends WTWHttpAdapter {
       String encodedBody = jsonEncode(body);
 
       final http.Response response = await http.post(uri, headers: headersMap, body: encodedBody);
-      if(response.statusCode != 200) { throw('WTHttpAdapter.post() error: ${response.statusCode}'); }
-      return jsonDecode(response.body);
+      return response.body;
     }on FormatException catch(e) {
       throw('WTHttpAdapter.post() FormatException: ${e.message}');
     }on Error catch(e) {
@@ -38,8 +37,7 @@ class WTWHttpAdapterImpl extends WTWHttpAdapter {
       if(headers!.isNotEmpty) { headersMap.addAll(headers); }
 
       final http.Response response = await http.get(uri, headers: headers);
-      if(response.statusCode != 200) { throw('WTHttpAdapter.post() error: ${response.statusCode}'); }
-      return jsonDecode(response.body);
+      return response.body;
     }on FormatException catch(e) {
       throw('WTHttpAdapter.get() FormatException: ${e.message}');
     }on Error catch(e) {
