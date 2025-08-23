@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import '../wtw_ui_component.dart';
 
+enum WTWUISidebarActionType {
+  basic,
+  menu
+}
+
 abstract class WTWUISidebar extends WTWUIComponent {
 
   Color? iconColor, labelColor;
@@ -10,9 +15,26 @@ abstract class WTWUISidebar extends WTWUIComponent {
   void setLabelColor(Color? v) { labelColor = v; }
   void setLabelSize(double? v) { labelSize = v; }
 
-  List<Map<String, dynamic>>? actions = List<Map<String, dynamic>>.empty(growable: true);
+  final List<Map<String, dynamic>>? actions = List<Map<String, dynamic>>.empty(growable: true);
   void addAction({ VoidCallback? action, IconData? icon, String? label }) {
-    actions!.add({ 'action': action, 'icon': icon, 'label': label });
+    actions!.add({
+      'type':   WTWUISidebarActionType.basic.name, 
+      'action': action, 
+      'icon':   icon, 
+      'label':  label,
+    });
+  }
+  void addMenuAction({ IconData? icon, String? label, List<Map<String, dynamic>>? items }) {
+    actions!.add({
+      'type':       WTWUISidebarActionType.menu.name, 
+      'icon':       icon,
+      'iconColor':  iconColor, 
+      'iconSize':   iconSize,
+      'label':      label,
+      'labelColor': labelColor,
+      'labelSize':  labelSize,
+      'items':      items 
+    });
   }
 
 }

@@ -30,25 +30,30 @@ void main() {
 
     test('set and get RawKey manually', () {
       encryption!.setRawKey('abcdefghijklmnop');
+
       expect(encryption!.getRawKey(), 'abcdefghijklmnop');
     });
 
     test('set and get EncryptKey manually', () {
       final key = Key.fromUtf8('abcdefghijklmnop');
       encryption!.setEncryptKey(key);
+
       expect(encryption!.getEncryptKey(), key);
     });
 
     test('set and get IV manually', () {
       final iv = IV.fromUtf8('1234567890123456');
       encryption!.setIv(iv);
+
       expect(encryption!.getIv(), iv);
     });
 
     test('set and get Encrypter manually', () {
       final enc = Encrypter(AES(Key.fromUtf8('abcdefghijklmnop')));
       encryption!.setEncrypter(enc);
+
       expect(encryption!.getEncrypter(), enc);
     });
+
   });
 }
