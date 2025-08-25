@@ -10,9 +10,13 @@ abstract class WTWController<T> extends GetxController {
   void unfocusFocusNode() { FocusScope.of(Get.context!).unfocus(); }
 
   // set controller route arguments when view gets initialized
-  void init({ Map<String, dynamic>? arguments }) {
+  void init() {
     unfocusFocusNode();
-    setParams(arguments ?? {});
+
+    Map<String, dynamic> map = <String, dynamic>{};
+    if(Get.arguments != null) { map.addAll(Get.arguments); }
+    if(Get.parameters.isNotEmpty) { map.addAll(Get.parameters); }
+    setParams(map);
   }
 
   // init controller state
