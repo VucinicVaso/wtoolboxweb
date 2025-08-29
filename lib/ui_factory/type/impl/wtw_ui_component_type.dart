@@ -62,7 +62,8 @@ enum WTWUIFormType {
 
 enum WTWUIFormInputFieldType {
   text,
-  protected
+  protected,
+  datetime,
 }
 
 enum WTWUIButtonType {

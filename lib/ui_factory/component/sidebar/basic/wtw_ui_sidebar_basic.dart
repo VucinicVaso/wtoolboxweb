@@ -70,7 +70,7 @@ class WTWUISidebarBasic extends WTWUISidebar {
    return WTWUISidebarDropdown(
       key:        getUniqueKey(),
       width:      width,
-      label:      map!['label'],
+      label:      map['label'],
       labelSize:  labelSize,
       labelColor: labelColor,
       icon:       map['icon'],
