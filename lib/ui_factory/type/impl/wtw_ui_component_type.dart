@@ -39,8 +39,12 @@ enum WTWUILayoutType {
   verticalExpandedAndScrollable,
 }
 
+enum WTWUIWrapType {
+  wrap
+}
+
 enum WTWUIEmptyType {
-  empty 
+  empty
 }
 
 enum WTWUIDividerType {

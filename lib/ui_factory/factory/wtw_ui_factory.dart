@@ -6,6 +6,7 @@ import '../component/sidebar/wtw_ui_sidebar.dart';
 import '../component/body/wtw_ui_body.dart';
 import '../component/footer/wtw_ui_footer.dart';
 import '../component/layout/wtw_ui_layout.dart';
+import '../component/wrap/wtw_ui_wrap.dart';
 import '../component/empty/wtw_ui_empty.dart';
 import '../component/space/wtw_ui_space.dart';
 import '../component/divider/wtw_ui_divider.dart';
@@ -27,6 +28,8 @@ abstract class WTWUIFactory with WTWUIFactoryConfig {
   WTWUIFooter? createFooter(WTWUIFooterType type);
 
   WTWUILayout? createLayout(WTWUILayoutType type);
+
+  WTWUIWrap? createWrap(WTWUIWrapType type);
 
   WTWUIEmpty? createEmpty(WTWUIEmptyType type);
 

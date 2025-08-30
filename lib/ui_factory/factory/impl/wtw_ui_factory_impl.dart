@@ -13,6 +13,8 @@ import '../../component/layout/vertical/wtw_ui_layout_vertical.dart';
 import '../../component/layout/vertical/wtw_ui_layout_vertical_scrollable.dart';
 import '../../component/layout/vertical/wtw_ui_layout_vertical_expanded.dart';
 import '../../component/layout/vertical/wtw_ui_layout_vertical_expanded_and_scrollable.dart';
+import '../../component/wrap/wtw_ui_wrap.dart';
+import '../../component/wrap/impl/wtw_ui_wrap_impl.dart';
 import '../../component/scaffold/wtw_ui_scaffold.dart';
 import '../../component/scaffold/impl/wtw_ui_scaffold_impl.dart';
 import '../../component/header/wtw_ui_header.dart';
@@ -266,6 +268,17 @@ class WTWUIFactoryImpl extends WTWUIFactory {
           ..setBackgroundColor(Colors.transparent)
           ..setMainAxisAlignment(MainAxisAlignment.start)
           ..setCrossAxisAlignment(CrossAxisAlignment.center);
+        return component;
+    }
+  }
+
+  @override
+  WTWUIWrap? createWrap(WTWUIWrapType type) {
+    switch(type) {
+      case WTWUIWrapType.wrap: 
+        var component = WTWTUIWrapImpl()
+          ..setPadding(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0)
+          ..setMargin(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0);
         return component;
     }
   }
