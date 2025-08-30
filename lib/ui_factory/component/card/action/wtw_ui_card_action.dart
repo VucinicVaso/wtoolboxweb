@@ -7,26 +7,26 @@ class WTWUICardAction extends WTWUICard {
     double? w = width;
     double? h = height;
 
-    if(w! > 1000) { 
+    if(w! > 1000) {
       width     = 90;
       height    = 90;
       iconSize  = 27;
-      labelSize = 25;
+      labelSize = 15;
     }
     if(w <= 1000) {
       width     = 80;
       height    = 80;
       iconSize  = 25;
-      labelSize = 18;
+      labelSize = 13;
     }
     if(w <= 800) { 
       width     = 60;
       height    = 60;
       iconSize  = 23;
-      labelSize = 16;
+      labelSize = 11;
     }
 
-    labelSize = label!.length > 10 ? labelSize! * 0.6 : labelSize;
+    if(label!.length > 10) { labelSize = labelSize! * 0.6; }
   }
 
   @override
@@ -40,6 +40,7 @@ class WTWUICardAction extends WTWUICard {
         padding: padding,
         width: width,
         //height: height,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           color: backgroundColor,
           border: Border.all(color: borderColor!, width: 1.0),
@@ -67,9 +68,12 @@ class WTWUICardAction extends WTWUICard {
                   style: TextStyle(
                     color: labelColor,
                     fontSize: labelSize, 
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.normal,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 2, 
+                  overflow: TextOverflow.ellipsis, 
+                  softWrap: true,
                 )
               : SizedBox(),
 
