@@ -39,7 +39,7 @@ class WTWUICardAction extends WTWUICard {
         margin: margin,
         padding: padding,
         width: width,
-        //height: height,
+        height: height,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: backgroundColor,
@@ -51,9 +51,9 @@ class WTWUICardAction extends WTWUICard {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             /// icon
-            icon != null 
+            icon != null
               ? Icon(
-                  icon, 
+                  icon,
                   size: iconSize, 
                   color: iconColor
                 ) 
@@ -63,17 +63,19 @@ class WTWUICardAction extends WTWUICard {
 
             /// label
             label != null
-              ? Text(
-                  label!,
-                  style: TextStyle(
-                    color: labelColor,
-                    fontSize: labelSize, 
-                    fontWeight: FontWeight.normal,
+              ? Flexible(
+                  child: Text(
+                    label!,
+                    style: TextStyle(
+                      color: labelColor,
+                      fontSize: labelSize, 
+                      fontWeight: FontWeight.normal,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2, 
+                    overflow: TextOverflow.ellipsis, 
+                    softWrap: true,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2, 
-                  overflow: TextOverflow.ellipsis, 
-                  softWrap: true,
                 )
               : SizedBox(),
 
