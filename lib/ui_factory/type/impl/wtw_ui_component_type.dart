@@ -75,3 +75,7 @@ enum WTWUIButtonType {
   text2,
   underlineText1,
 }
+
+enum WTWUICardType {
+  action
+}

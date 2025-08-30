@@ -36,6 +36,8 @@ import '../../component/form_builder/input_field/datetime/wtw_ui_form_input_fiel
 import '../../component/button/wtw_ui_button.dart';
 import '../../component/button/text/wtw_ui_button_text.dart';
 import '../../component/button/underline_text/wtw_ui_button_underline_text.dart';
+import '../../component/card/wtw_ui_card.dart';
+import '../../component/card/action/wtw_ui_card_action.dart';
 import '../../component/floating_menu/wtw_ui_floating_menu.dart';
 import '../../component/floating_menu/basic/wtw_ui_floating_menu_basic.dart';
 import '../../component/floating_menu/extended/wtw_ui_floating_menu_extended.dart';
@@ -454,6 +456,21 @@ class WTWUIFactoryImpl extends WTWUIFactory {
           ..setBackgroundColor(Colors.transparent)
           ..setBorderColor(theme!.primary1)
           ..setLabelColor(theme!.primary1);
+        return component;
+    }
+  }
+
+  @override
+  WTWUICard? createCard(WTWUICardType type) {
+    switch(type) {
+      case WTWUICardType.action:
+        var component = WTWUICardAction()
+          ..setPadding(left: 5.0, top: 5.0, right: 5.0, bottom: 5.0)
+          ..setMargin(left: 5.0, top: 5.0, right: 5.0, bottom: 5.0)
+          ..setBackgroundColor(theme!.background1)
+          ..setBorderColor(theme!.background2)
+          ..setIconColor(theme!.text1)
+          ..setLabelColor(theme!.text1);
         return component;
     }
   }

@@ -13,6 +13,7 @@ import '../component/divider/wtw_ui_divider.dart';
 import '../component/form_builder/form/wtw_ui_form.dart';
 import '../component/form_builder/input_field/wtw_ui_form_input_filed.dart';
 import '../component/button/wtw_ui_button.dart';
+import '../component/card/wtw_ui_card.dart';
 import '../component/floating_menu/wtw_ui_floating_menu.dart';
 
 abstract class WTWUIFactory with WTWUIFactoryConfig {
@@ -42,6 +43,8 @@ abstract class WTWUIFactory with WTWUIFactoryConfig {
   WTWUIFormInputField? createFormInputFiled(WTWUIFormInputFieldType type);
 
   WTWUIButton? createButton(WTWUIButtonType type);
+
+  WTWUICard? createCard(WTWUICardType type);
 
   WTWUIFloatingMenu? createFloatingMenu(WTWUIFloatingMenuType type);
 
