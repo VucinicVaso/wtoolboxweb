@@ -52,7 +52,6 @@ class WTWEnUsTranslations extends WTWTranslations {
       "errorsTitle": "Errors",
       "errorMessage": "Something went wrong please try again!",
       "contentMissing": "The content of these page is currently unavailable.",
-      "loginOptionPin": "PIN",
       "uploadFile": "Upload files",
       "chooseFile": "Choose files to upload",
       "selectedFiles": "Selected files",

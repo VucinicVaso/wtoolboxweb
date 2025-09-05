@@ -53,7 +53,6 @@ class WTWMeMneTranslations extends WTWTranslations {
       "errorsTitle": "Greške",
       "errorMessage": "Nešto nije u redu. Molimo Vas, pokušajte ponovo!",
       "contentMissing": "Sadržaj ove stranice trenutno nije dostupan.",
-      "loginOptionPin": "PIN",
       "uploadFile": "Dodaj fajlove",
       "chooseFile": "Odaberite fajlove za otpremanje",
       "selectedFiles": "Odabrani fajlovi",
