@@ -1,5 +1,5 @@
-abstract class WTWUseCaseWithParams<Type, Params> {
+abstract class WTWUseCaseWithParams<T, P> {
 
-  Future<Type> call(Params params);
+  Future<T> call(P params);
 
 }
