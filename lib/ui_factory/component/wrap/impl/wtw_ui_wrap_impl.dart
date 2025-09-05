@@ -9,6 +9,7 @@ class WTWTUIWrapImpl extends WTWUIWrap {
       width: width,
       padding: padding,
       margin: margin,
+      alignment: Alignment.center,
       child: Wrap(
         direction: direction!,
         children: <Widget>[

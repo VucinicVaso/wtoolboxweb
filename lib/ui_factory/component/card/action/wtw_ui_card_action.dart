@@ -54,7 +54,7 @@ class WTWUICardAction extends WTWUICard {
             icon != null
               ? Icon(
                   icon,
-                  size: iconSize, 
+                  size: iconSize,
                   color: iconColor
                 ) 
               : SizedBox(),

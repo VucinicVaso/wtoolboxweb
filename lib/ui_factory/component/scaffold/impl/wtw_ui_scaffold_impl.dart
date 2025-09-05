@@ -15,7 +15,7 @@ class WTWUIScaffoldImpl extends WTWUIScaffold {
       key: getUniqueKey(),
       builder: (context, constriants) {
         print('--------------------------------------------');
-        print('WTWUISidebarBasic(width: ${constriants.maxWidth}, height: ${constriants.maxHeight})');
+        print('WTWUIScaffoldImpl(width: ${constriants.maxWidth}, height: ${constriants.maxHeight})');
         print('--------------------------------------------');
 
         width  = constriants.maxWidth;
