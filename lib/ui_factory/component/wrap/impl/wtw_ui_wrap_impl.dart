@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../wtw_ui_wrap.dart';
 
-class WTWTUIWrapImpl extends WTWUIWrap {
+class WTWUIWrapImpl extends WTWUIWrap {
 
   @override
   Widget? build() {
