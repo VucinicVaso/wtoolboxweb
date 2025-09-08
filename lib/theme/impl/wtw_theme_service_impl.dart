@@ -16,6 +16,7 @@ class WTWThemeServiceImpl extends WTWThemeService {
   @override
   void setLightTheme(WTWTheme? wtTheme) {
     lightTheme = wtTheme;
+    addTheme(wtTheme);
   }
   @override
   void useLightTheme() {
@@ -25,6 +26,7 @@ class WTWThemeServiceImpl extends WTWThemeService {
   @override
   void setDarkTheme(WTWTheme? wtTheme) {
     darkTheme = wtTheme;
+    addTheme(wtTheme);
   }
   @override
   void useDarkTheme() {
