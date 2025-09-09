@@ -5,7 +5,7 @@ import '../wtw_theme_extension.dart';
 class WTWThemeLight extends WTWTheme {
 
   WTWThemeLight() {
-    setName('Light');
+    setName('light');
     setTheme();
   }
 

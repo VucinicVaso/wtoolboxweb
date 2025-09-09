@@ -5,7 +5,7 @@ import '../wtw_theme_extension.dart';
 class WTWThemeDark extends WTWTheme {
 
   WTWThemeDark() {
-    setName('Dark');
+    setName('dark');
     setTheme();
   }
 

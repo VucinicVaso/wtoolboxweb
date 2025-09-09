@@ -22,9 +22,12 @@ abstract class WTWThemeService {
   WTWThemeExtension? themeExtension;
 
   List<Map<String, dynamic>> themes = List<Map<String, dynamic>>.empty(growable: true);
+  void setTheme({ WTWThemeEnums? wtType, WTWTheme? wtTheme });
   void addTheme(WTWTheme? theme) { themes.add({ 'key': themes.length + 1, 'name': theme!.name, 'data': theme }); }
   List<Map<String, dynamic>>? getThemes() { return themes; }
-
-  void setTheme({ WTWThemeEnums? wtType, WTWTheme? wtTheme });
+  void updateTheme(String? name) {
+    if(name == WTWThemeEnums.light.name) { useLightTheme(); }
+    if(name == WTWThemeEnums.dark.name) { useDarkTheme(); }
+  }
 
 }
