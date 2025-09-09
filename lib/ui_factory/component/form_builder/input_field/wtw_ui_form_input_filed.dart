@@ -59,7 +59,9 @@ abstract class WTWUIFormInputField extends WTWUIComponent {
   void setErrorTextSize(double? v) { errorTextSize = v; }
 
   List<Map<String, dynamic>>? dropdownItems = List<Map<String, dynamic>>.empty(growable: true);
-  void addDropdownItem({ int? key, String? label, bool? selected }) { dropdownItems!.add({ 'key': key, 'label': label, 'selected': selected }); }
+  void addDropdownItem({ int? key = 0, String? label = '', String? image = '', bool? selected = false }) { 
+    dropdownItems!.add({ 'key': key, 'label': label, 'image': image, 'selected': selected }); 
+  }
   void addDropdownItems(List<Map<String, dynamic>>? v) { dropdownItems!.addAll(v!); }
 
   TextAlign? textAlign = TextAlign.left;
