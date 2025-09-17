@@ -20,7 +20,13 @@ class WTWThemeServiceImpl extends WTWThemeService {
   }
   @override
   void useLightTheme() {
-    setTheme(wtType: WTWThemeEnums.light, wtTheme: lightTheme!);
+    ThemeData themeData = ThemeData
+      .light()
+      .copyWith(
+        extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
+      );
+    Get.changeTheme(themeData);
+    Get.changeThemeMode(ThemeMode.light);
   }
 
   @override
@@ -30,32 +36,15 @@ class WTWThemeServiceImpl extends WTWThemeService {
   }
   @override
   void useDarkTheme() {
-    setTheme(wtType: WTWThemeEnums.dark, wtTheme: darkTheme!);
-  }
+    theme = darkTheme!;
 
-  @override
-  void setTheme({ WTWThemeEnums? wtType, WTWTheme? wtTheme }) {
-    theme = wtTheme;
-
-    if(wtType!.name == WTWThemeEnums.light.name) {
-      ThemeData themeData = ThemeData
-        .light()
-        .copyWith(
-          extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
-        );
-      Get.changeTheme(themeData);
-      Get.changeThemeMode(ThemeMode.light);
-    }
-
-    if(wtType.name == WTWThemeEnums.dark.name) {
-      ThemeData themeData = ThemeData
-        .dark()
-        .copyWith(
-          extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
-        );
-      Get.changeTheme(themeData);
-      Get.changeThemeMode(ThemeMode.dark);
-    }
+    ThemeData themeData = ThemeData
+      .dark()
+      .copyWith(
+        extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
+      );
+    Get.changeTheme(themeData);
+    Get.changeThemeMode(ThemeMode.dark);
   }
 
 }
