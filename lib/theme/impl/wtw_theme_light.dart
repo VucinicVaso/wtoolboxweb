@@ -6,7 +6,7 @@ class WTWThemeLight extends WTWTheme {
 
   WTWThemeLight() {
     setName('light');
-    setTheme();
+    setThemeExtension();
   }
 
   @override
@@ -15,7 +15,7 @@ class WTWThemeLight extends WTWTheme {
   String? getName() { return name; }
 
   @override
-  void setTheme() {
+  void setThemeExtension() {
     themeExtension = WTWThemeExtension(
       background1: const Color(0xFFffffff),
       background2: const Color(0xFFF5F5F5),
@@ -47,6 +47,6 @@ class WTWThemeLight extends WTWTheme {
     );
   }
   @override
-  WTWThemeExtension? getTheme() { return themeExtension!; }
+  WTWThemeExtension? getThemeExtension() { return themeExtension!; }
 
 } 

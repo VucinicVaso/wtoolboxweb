@@ -36,25 +36,24 @@ class WTWThemeServiceImpl extends WTWThemeService {
   @override
   void setTheme({ WTWThemeEnums? wtType, WTWTheme? wtTheme }) {
     theme = wtTheme;
-    themeExtension = theme!.getTheme()!;
 
     if(wtType!.name == WTWThemeEnums.light.name) {
-      themeData = ThemeData
+      ThemeData themeData = ThemeData
         .light()
         .copyWith(
-          extensions: <ThemeExtension<dynamic>>[ themeExtension! ]
+          extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
         );
-      Get.changeTheme(themeData!);
+      Get.changeTheme(themeData);
       Get.changeThemeMode(ThemeMode.light);
     }
 
     if(wtType.name == WTWThemeEnums.dark.name) {
-      themeData = ThemeData
+      ThemeData themeData = ThemeData
         .dark()
         .copyWith(
-          extensions: <ThemeExtension<dynamic>>[ themeExtension! ]
+          extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
         );
-      Get.changeTheme(themeData!);
+      Get.changeTheme(themeData);
       Get.changeThemeMode(ThemeMode.dark);
     }
   }

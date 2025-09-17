@@ -33,7 +33,7 @@ class WTWDependencyContainerImpl extends WTWDependencyContainer {
     Get.put<WTWHttpAdapter>(WTWHttpAdapterImpl());
 
     WTWUIFactory? uiFactory = WTWUIFactoryImpl()
-      ..setTheme(Get.find<WTWThemeService>().themeExtension!);
+      ..setTheme(Get.find<WTWThemeService>().getTheme()!.themeExtension!);
     Get.put<WTWUIFactory>(uiFactory);
   }
 

@@ -6,7 +6,7 @@ class WTWThemeDark extends WTWTheme {
 
   WTWThemeDark() {
     setName('dark');
-    setTheme();
+    setThemeExtension();
   }
 
   @override
@@ -15,7 +15,7 @@ class WTWThemeDark extends WTWTheme {
   String? getName() { return name; }
 
   @override
-  void setTheme() {
+  void setThemeExtension() {
     themeExtension = WTWThemeExtension(
       background1: const Color(0xFF1E1E1E),
       background2: const Color(0xFF2A2A2A),
@@ -47,6 +47,6 @@ class WTWThemeDark extends WTWTheme {
     );
   }
   @override
-  WTWThemeExtension? getTheme() { return themeExtension!; }
+  WTWThemeExtension? getThemeExtension() { return themeExtension!; }
 
 } 

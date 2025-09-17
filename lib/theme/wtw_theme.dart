@@ -7,7 +7,7 @@ abstract class WTWTheme {
   String? getName();
 
   WTWThemeExtension? themeExtension;
-  void setTheme();  
-  WTWThemeExtension? getTheme();
+  void setThemeExtension();  
+  WTWThemeExtension? getThemeExtension();
 
 }
