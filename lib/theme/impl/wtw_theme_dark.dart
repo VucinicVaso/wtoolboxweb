@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 import '../wtw_theme.dart';
 import '../wtw_theme_extension.dart';
 
@@ -13,6 +13,17 @@ class WTWThemeDark extends WTWTheme {
   void setName(String? v) { name = v; }
   @override
   String? getName() { return name; }
+
+  @override
+  void setThemeData() {
+    themeData = ThemeData
+      .dark()
+      .copyWith(
+        extensions: <ThemeExtension<dynamic>>[ getThemeExtension()! ]
+      );
+  }
+  @override
+  ThemeData? getThemeData() { return themeData; }
 
   @override
   void setThemeExtension() {

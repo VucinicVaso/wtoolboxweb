@@ -9,10 +9,12 @@ abstract class WTWThemeService {
 
   WTWTheme? lightTheme;
   void setLightTheme(WTWTheme? wtTheme);
+  WTWTheme? getLightTheme();
   void useLightTheme();
 
   WTWTheme? darkTheme;
   void setDarkTheme(WTWTheme? wtTheme);
+  WTWTheme? getDarkTheme();
   void useDarkTheme();
 
   List<Map<String, dynamic>> themes = List<Map<String, dynamic>>.empty(growable: true);

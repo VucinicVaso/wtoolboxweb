@@ -19,12 +19,11 @@ class WTWThemeServiceImpl extends WTWThemeService {
     addTheme(wtTheme);
   }
   @override
+  WTWTheme? getLightTheme() { return lightTheme; }
+  @override
   void useLightTheme() {
-    ThemeData themeData = ThemeData
-      .light()
-      .copyWith(
-        extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
-      );
+    theme = lightTheme!;
+    ThemeData themeData = lightTheme!.getThemeData()!;
     Get.changeTheme(themeData);
     Get.changeThemeMode(ThemeMode.light);
   }
@@ -35,14 +34,11 @@ class WTWThemeServiceImpl extends WTWThemeService {
     addTheme(wtTheme);
   }
   @override
+  WTWTheme? getDarkTheme() { return darkTheme; }
+  @override
   void useDarkTheme() {
     theme = darkTheme!;
-
-    ThemeData themeData = ThemeData
-      .dark()
-      .copyWith(
-        extensions: <ThemeExtension<dynamic>>[ theme!.getThemeExtension()! ]
-      );
+    ThemeData themeData = darkTheme!.getThemeData()!;
     Get.changeTheme(themeData);
     Get.changeThemeMode(ThemeMode.dark);
   }
