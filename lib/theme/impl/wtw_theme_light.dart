@@ -7,6 +7,7 @@ class WTWThemeLight extends WTWTheme {
   WTWThemeLight() {
     setName('light');
     setThemeExtension();
+    setThemeData();
   }
 
   @override

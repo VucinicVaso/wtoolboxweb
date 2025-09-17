@@ -7,6 +7,7 @@ class WTWThemeDark extends WTWTheme {
   WTWThemeDark() {
     setName('dark');
     setThemeExtension();
+    setThemeData();
   }
 
   @override
